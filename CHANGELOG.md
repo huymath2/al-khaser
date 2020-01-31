@@ -1,4 +1,69 @@
 
+#### 0.80
+
+- Add check for well known names used by malware sandboxes.
+- Improve ProcessDebugObject anti-debug check thanks to @Mattiwatti
+
+
+#### 0.79
+- Add anti-disassembly trick: Jump with constant condition
+- Add anti-disassembly trick: Jump instruction with same target
+- Add anti-disassembly trick: Impossible disassembly
+- Add anti-disassembly trick: Function Pointers
+- Add anti-disassembly trick: Return Pointer Abuse
+- Add additional tools thanks to @darianvaughanm.
+
+
+#### 0.78
+- Fix anti-dump SizeOfImage() thanks to @Mattiwatti
+- Fix Virtualbox vartype flag check of VARIANT properties from WMI thanks to @Mattiwatti
+- Fix crash for Wow64 binaries in ScanForModules_LDR_Direct thanks to @dvarshavsky
+- Fix IsBadLibrary() FP's for Wow64 binaries thanks to @dvarshavsky
+- Added checks for Win32_PnPDevice for VBOX entries thanks to @gsuberland
+- Added checks for Win32_BaseBoard thanks to @gsuberland
+- Added checks for Win32_Bus to see if only ACPIBus_BUS_0, PCI_BUS_0, PNP_BUS_0 are present thanks to @gsuberland
+- Added checks for Win32_PnPEntity for known VirtualBox hardware thanks to @gsuberland
+- Added checks for vbox devices (PCI\\VEN_80EE&DEV_CAFE) using WMI thanks to @gsuberland
+- Added ATAIdentifyDump and StructDumpCodegen tools to the repo thanks to @gsuberland
+- Add README and CHANGELOG to VS solution file.
+- Delete compiled binaries from repository.
+- Ignores NuGet packages directory from git.
+- Fix false positive in VirtualBox BIOS serial number WMI check thanks to @gsuberland
+
+
+#### 0.77
+- Add a gitattributes to normalize line endings.
+- Update VMDriverServices routine thanks to @hfiref0x
+- Add virtual machine detect by license thanks to @hfiref0x
+- Fix for HardwareBreakpoints routine thanks to @hfiref0x
+- Fix memory leak in check_mac_addr routine thanks to @hfiref0x
+- Update MemoryBreakpoints_PageGuard.cpp thanks to @hfiref0x
+- Fix number of bugs in get_system_firmware thanks to @hfiref0x
+- Fix InitWMI routine and multiple bugs in WMI related routines thanks to @hfiref0x
+- Remove incorrect result checks and wrong printf specifiers in ScanForModules.cpp thanks to @hfiref0x
+- Fix null pointer dereference in qemu_firmware_ACPI routine thanks to @hfiref0x
+- Fix null pointer dereferences in VirtualBox.cpp & VMWare.cpp thanks to @hfiref0x
+- Fix QueueUserAPC_Injection routine by rewrite thanks to @hfiref0x
+- Fix null pointer dereference in setupdi_diskdrive routine thanks to @hfiref0x
+- Add error handling in log_print thanks to @hfiref0x
+- Fix null pointer dereference in print_last_error routine, add more error handling thanks to @hfiref0x
+- Fix signed/unsigned mismatch for specifiers in various *printf calls thanks to @hfiref0x
+- Fix resource leak in timing_IcmpSendEcho routine thanks to @hfiref0x
+- Fix missing VirtualAlloc checks in WriteWatch.cpp thanks to @hfiref0x
+- Remove incorrect return value checks thanks to @hfiref0x
+- Fixed multiple bugs in check_adapter_name & ascii_to_wide_str thanks to @hfiref0x
+- Update and add typecast in IsBadLibrary thanks to @hfiref0x
+- Fix handle leak in GetProccessIDByName routine thanks to @hfiref0x
+- Fix invalid return value check in attempt_to_read_memory_wow64 routine thanks to @hfiref0x
+- Remove double call of SetDebugPrivileges in CreateRemoteThread_Injection thanks to @hfiref0x
+- Fix multiple bugs in SetPrivilege routine thanks to @hfiref0x
+- Fix unexpected behavior in SetHandleInformatiom_ProtectedHandle thanks to @hfiref0x
+- Fix null pointer dereference in get_system_firmware routine thanks to @hfiref0x
+- Fix multiple bugs in {Services, log, Generic, timing, process, ScanForModules cpp files}  thanks to @hfiref0x
+- Fix null pointer derefence in {vmware,vbox,qemu}_firmware_ACPI thanks to @hfiref0x
+- Fix resource leak in ScanForModules_ToolHelp32 routine thanks to @hfiref0x
+- Fix multiple bugs in ProcessJob routine thanks to @hfiref0x
+
 #### 0.76
 - Renamed PEB_BeingDebugged.cpp to BeingDebugged.cpp
 - Renamed CheckRemoteDebuggerPresentAPI.cpp to CheckRemoteDebuggerPresent.cpp
